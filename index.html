@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リンク転送</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h2>リンク転送</h2>
+        <p>
+            <a id="Link" href="" style="color: rgb(151, 151, 230);">リンクが設定されていません。</a><br>
+            *リンクの安全性は保障しません。
+        </p>
+    </div>
+    <footer>&copy;<a class="link" href="https://github.com/Meziro039">Meziro</a></footer>
+
+    <script>
+        let Search = new URL(location.href).searchParams.get("url");
+
+        if (Search.match(/^(http|https):\/\/.+/)){
+            ;
+        }
+        else {
+            Search = "http://" + Search;
+        }
+
+        document.getElementById("Link").textContent = new URL(Search);
+        document.getElementById("Link").href = new URL(Search)
+    </script>
+</body>
+</html>
