@@ -18,7 +18,9 @@
     <footer>&copy;<a class="link" href="https://github.com/Meziro039">Meziro</a></footer>
 
     <script>
-        let Search = new URL(location.href).searchParams.get("url");
+        let Search = new URL(location.href).search.slice(1);
+
+        console.log(Search);
 
         if (Search.match(/^(http|https):\/\/.+/)){
             ;
